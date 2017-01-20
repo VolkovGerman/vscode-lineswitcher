@@ -21,7 +21,7 @@ url = 'http://cars-managment.com/factory-default';
 
 Here is a gif about how it works.
 
-![Preview](docs/images/preview.gif)
+<img src="https://github.com/VolkovGerman/vscode-switchline/raw/master/docs/images/preview.gif" alt="Demo GIF" />
 
 ## Install
 
@@ -47,9 +47,14 @@ This extension contributes the following settings:
 
 ## Release Notes
 
-### 0.0.1
+### 0.0.3
 
 Initial release of SwitchLine, contains only basic functionality:
 
 * setup config file
 * switch between commented lines
+
+## Author
+
+- [GitHub](https://github.com/VolkovGerman)
+- [Website](http://volkov97.com)

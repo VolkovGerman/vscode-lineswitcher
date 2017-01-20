@@ -2,7 +2,7 @@
     "name": "switch-line",
     "displayName": "switchLine",
     "description": "Choose what line to uncommit much faster.",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "volkov97",
     "engines": {
         "vscode": "^1.5.0"
@@ -15,28 +15,30 @@
     ],
     "main": "./out/src/extension",
     "contributes": {
-        "commands": [{
-            "command": "extension.switchLine",
-            "title": "Switch Line"
-        }],
+        "commands": [
+            {
+                "command": "extension.switchLine",
+                "title": "Switch Line"
+            }
+        ],
         "configuration": {
             "type": "object",
-			"title": "path-autocomplete",
-			"properties": {
+            "title": "path-autocomplete",
+            "properties": {
                 "switchLine.path": {
                     "type": "string",
-					"default": "/config.js",
-					"description": "Path to file, where you want to switch lines"
+                    "default": "/config.js",
+                    "description": "Path to file, where you want to switch lines"
                 },
                 "switchLine.matchLineRule": {
                     "type": "string",
-					"default": "url = '.+'",
-					"description": "Regular expression to match line"
+                    "default": "url = '.+'",
+                    "description": "Regular expression to match line"
                 },
                 "switchLine.matchDataRule": {
                     "type": "string",
-					"default": "'.+'",
-					"description": "Regular expression to match data from line"
+                    "default": "'.+'",
+                    "description": "Regular expression to match data from line"
                 }
             }
         }
