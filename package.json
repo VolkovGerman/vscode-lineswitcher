@@ -1,7 +1,7 @@
 {
-    "name": "toloka-server-select",
-    "displayName": "Toloka Server Select",
-    "description": "This makes selection of server much faster.",
+    "name": "switch-line",
+    "displayName": "switchLine",
+    "description": "Choose what line to uncommit much faster.",
     "version": "0.0.1",
     "publisher": "volkov97",
     "engines": {
@@ -11,14 +11,35 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.sayHello"
+        "onCommand:extension.switchLine"
     ],
     "main": "./out/src/extension",
     "contributes": {
         "commands": [{
-            "command": "extension.sayHello",
-            "title": "Hello World"
-        }]
+            "command": "extension.switchLine",
+            "title": "Switch Line"
+        }],
+        "configuration": {
+            "type": "object",
+			"title": "path-autocomplete",
+			"properties": {
+                "switchLine.path": {
+                    "type": "string",
+					"default": "/config.js",
+					"description": "Path to file, where you want to switch lines"
+                },
+                "switchLine.matchLineRule": {
+                    "type": "string",
+					"default": "url = '.+'",
+					"description": "Regular expression to match line"
+                },
+                "switchLine.matchDataRule": {
+                    "type": "string",
+					"default": "'.+'",
+					"description": "Regular expression to match data from line"
+                }
+            }
+        }
     },
     "scripts": {
         "vscode:prepublish": "tsc -p ./",

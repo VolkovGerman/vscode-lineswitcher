@@ -1,65 +1,55 @@
-# toloka-server-select README
+# VSCode "SwitchLine" Extension
 
-This is the README for your extension "toloka-server-select". After writing up a brief description, we recommend including the following sections.
+This is VS Code extension. It helps to switch between multiply commented lines of a certain file. 
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Here you can see what this extension actually does. For example you have many urls from which you can get info about the cars. But you should use only one of them. And you always need to switch between them. So, this extension is a solution!
 
-For example if there is an image subfolder under your extension project workspace:
+```javascript
+// All our cars factories 
 
-\!\[feature X\]\(images/feature-x.png\)
+let url;
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+url = 'http://cars-managment.com/factory-default';
+// url = 'http://cars-managment.com/factory-south';
+// url = 'http://cars-managment.com/factory-east';
+// url = 'http://cars-managment.com/factory-west';
+// url = 'http://cars-managment.com/factory-moon';
+// url = 'http://cars-managment.com/factory-mars';
+```
 
-## Requirements
+Here is a gif about how it works.
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+![Preview](docs/images/preview.gif)
 
-## Extension Settings
+## Install
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+You can install this extension via `ext install switchLine`
 
-For example:
+## Usage
+
+1. Setup your config file as described at [Extension Settings Section](#extSettings) 
+2. Open Command Palette and search for `Switch Line` extension, then press `Enter`.
+3. You will see a selection list, that contains lines data, that you configured.
+4. Choose data that you need to turn on and wait for succesfull info message.
+
+## <a name="extSettings"></a>Extension Settings
 
 This extension contributes the following settings:
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+* `switchLine.path`: path to your file with commented lines
+    * default: `/config.js`
+* `switchLine.matchLineRule`: regexp to recognize lines you want to switch
+    * default: `url = '.+'`
+* `switchLine.matchDataRule`: regexp to match useful data in line
+    * default: `'.+'`
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+### 0.0.1
 
-### 1.0.0
+Initial release of SwitchLine, contains only basic functionality:
 
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on OSX or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on OSX or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (OSX) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+* setup config file
+* switch between commented lines
