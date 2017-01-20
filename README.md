@@ -47,7 +47,7 @@ This extension contributes the following settings:
 
 ## Release Notes
 
-### 0.0.3
+### 0.1.0
 
 Initial release of SwitchLine, contains only basic functionality:
 

@@ -2,13 +2,18 @@
     "name": "switch-line",
     "displayName": "switchLine",
     "description": "Choose what line to uncommit much faster.",
-    "version": "0.0.2",
+    "version": "0.1.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/VolkovGerman/vscode-switchline"
+    },
+    "icon": "docs/images/icon.png",
     "publisher": "volkov97",
     "engines": {
         "vscode": "^1.5.0"
     },
     "categories": [
-        "Other"
+        "Formatters"
     ],
     "activationEvents": [
         "onCommand:extension.switchLine"
