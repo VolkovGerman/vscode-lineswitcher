@@ -28,8 +28,6 @@ export default class CommentSwitcher {
         this.matchDataRule = this.config.get('matchDataRule') + '';
 
         this.dataLines = [];
-
-        this.getListOfLines();
     }
 
     get activeData() {
@@ -40,18 +38,22 @@ export default class CommentSwitcher {
         return this.dataLines.map(_ => _.data);
     }
 
-    private getListOfLines() {
-        vscode.workspace
-            .openTextDocument(this.pathToFile)
-            .then(file => {
-                const content = file.getText();
+    getListOfLines() {
+        return new Promise((resolve, reject) => {
+            vscode.workspace
+                .openTextDocument(this.pathToFile)
+                .then(file => {
+                    const content = file.getText();
 
-                this.dataLines = content.split('\n')
-                    .map((line, index) => new LineItem(index, line, !!line.match(/\/\/ /)))
-                    .filter(_ => _.data.match(new RegExp(this.matchLineRule)));
-                    
-                this.dataLines.forEach(_ => _.data = _.data.match(new RegExp(this.matchDataRule))[0].slice(1, -1));
-            });
+                    this.dataLines = content.split('\n')
+                        .map((line, index) => new LineItem(index, line, !!line.match(/\/\/ /)))
+                        .filter(_ => _.data.match(new RegExp(this.matchLineRule)));
+
+                    this.dataLines.forEach(_ => _.data = _.data.match(new RegExp(this.matchDataRule))[0].slice(1, -1));
+
+                    resolve();
+                });
+        });
     }
 
     private commentLine(line) {

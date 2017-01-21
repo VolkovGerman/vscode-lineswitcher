@@ -47,6 +47,12 @@ This extension contributes the following settings:
 
 ## Release Notes
 
+### 0.1.1
+
+Bug fix patch:
+
+* correct list of lines on first attempt
+
 ### 0.1.0
 
 Initial release of SwitchLine, contains only basic functionality:
